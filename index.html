@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#05080e">
+  <meta name="description" content="Змейка — небольшая аркада на HTML5 Canvas.">
+  <title>Змейка</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hud">
+      <div class="hud__item">
+        <span class="hud__label">Счёт</span>
+        <span class="hud__value hud__value--score" id="score">0</span>
+      </div>
+      <div class="hud__item hud__item--right">
+        <span class="hud__label">Рекорд</span>
+        <span class="hud__value" id="best">0</span>
+      </div>
+    </header>
+
+    <div class="stage">
+      <canvas id="game" aria-label="Игровое поле змейки"></canvas>
+
+      <div class="overlay is-visible" id="overlay" aria-hidden="false">
+        <div class="overlay__card" role="dialog" aria-labelledby="overlay-title" aria-describedby="overlay-text">
+          <p class="overlay__badge" id="overlay-badge">Аркада</p>
+          <h1 class="overlay__title" id="overlay-title">Змейка</h1>
+          <p class="overlay__text" id="overlay-text">Собирайте сферы, растите и не врезайтесь в стены и в себя.</p>
+          <button class="btn" id="overlay-btn" type="button">Играть</button>
+          <p class="overlay__hint" id="overlay-hint">
+            <kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd> или <kbd>WASD</kbd> · <kbd>Пробел</kbd> — пауза
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <button class="btn btn--ghost" id="sound-btn" type="button" aria-pressed="true">Звук: вкл</button>
+      <button class="btn btn--ghost" id="pause-btn" type="button" disabled>Пауза</button>
+      <button class="btn btn--ghost" id="restart-btn" type="button">Заново</button>
+    </footer>
+  </main>
+
+  <script src="js/engine.js"></script>
+  <script src="js/snake.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
